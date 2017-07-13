@@ -1,0 +1,32 @@
+Maternal Effects and Parent-Offspring Conflict
+Bram Kuijper & Rufus A Johnstone
+
+Numerical iterations 
+
+files:
+auxiliary.h: header file with auxiliary functions in terms of filenames and number generation
+compile.sh: to compile the numerical iterations
+eigenvectors_battle.txt: eigenvectors for the battleground model (export from Mathematica)
+eigenvectors.txt: eigenvectors for the resolution model (export from Mathematica)
+generate_cpp.py: python script which generates a c++ file from the txt files
+generate_iters.py: python script which generates permutations of parameter combinations
+resolution_numerical.cpp: base c++ file to which mathematica expressions are added
+run_conflict.sh: a testrun file
+selgrad_mother_battle.txt: maternal selection gradients, battleground model (export from Mathematica)
+selgrad_offspring_battle.txt: offspring selection gradients, battleground model (export from Mathematica)
+selgrad.txt: selection gradients resolution model (export from Mathematica)
+
+Requirements:
+GNU Scientific Library
+a C compiler, like gcc.
+Python 3
+Compiling of the C file takes at least 20Gb of RAM and takes 20 minutes
+
+Compile as follows
+bash compile.sh
+
+Then generate some parameter permutations by running the python script 'generate_runs.py'
+./generate_iters.py > batch_file.sh
+
+Then run the batch file to run the numerical models
+bash batch_file.sh

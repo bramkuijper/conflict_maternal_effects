@@ -1,0 +1,29 @@
+Maternal Effects and Parent-Offspring Conflict
+Bram Kuijper & Rufus A Johnstone
+
+Individual-based simulations: battleground case
+
+files:
+- po_battleground_general.cpp: source code 
+- generate_runs.py: generate a batch file to run the simulations
+- plot_sims.py: plot a single individual based simulation
+
+Requirements:
+GNU Scientific Library
+a C compiler, like gcc.
+
+For some attributes, like generating parameter permutations and plotting simulations:
+Python 3
+numpy
+matplotlib
+pandas
+
+
+Compile the individual-based model as follows:
+g++ -Wall -o xpo_battleground  po_battleground_general.cpp -lm -lrt -lgsl -lgslcblas
+
+Then generate some parameter permutations by running the python script 'generate_runs.py'
+./generate_runs.py > batch_file.sh
+
+Then run the batch file to run the individual based simulations
+bash batch_file.sh
